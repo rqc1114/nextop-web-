@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        span {
+            display: inline-block;
+            /* border: solid 1px red; */
+            width: 70px;
+            text-align: right;
+        }
+
+        fieldset {
+            width: 350px;
+            box-sizing: border-box;
+            
+        }
+
+        button 
+        {
+            margin-top: 10px;
+            width: 350px;
+            height: 50px;
+            font-size: 1.1em;
+        }
+
+    </style>
+
+
+    <script>
+    
+    function function1()
+    {
+        name2 = name1;
+        num2 = num1;
+        address2 = address1;
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>주문정보</legend>
+        <span>이름 :</span> <input id="name1" type = "text"><br></br>
+
+        <span>연락처 :</span> <input id="number1" type = "text"><br></br>
+
+        <span>주소 :</span> <input id="address1" type = "text">
+    </fieldset>
+
+    <br></br>
+
+    <fieldset>
+        <legend>배송정보</legend>
+
+        <input onclick = function1 type = "checkbox"> 주문 정보와 배송 정보가 같습니다
+
+        <br></br>
+
+        <span>이름 :</span> <input id="name2" type = "text"><br></br>
+
+        <span>연락처 :</span> <input id="number2" type = "text"><br></br>
+
+        <span>주소 :</span> <input id="address2" type = "text">
+    </fieldset>
+
+
+    <script>
+
+    var name1 = document.querySelector("#name1");
+
+    var num1 = document.querySelector("#number1");
+
+    var address1 = document.querySelector("#address1");
+
+
+    var name2 = document.querySelector("#name2");
+
+    var num2 = document.querySelector("#number2");
+
+    var address2 = document.querySelector("#address2");
+
+
+    </script>
+
+    <button>결제하기</button>
+
+</body>
+</html>

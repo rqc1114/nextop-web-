@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    h2{
+        margin: 10px 0 20px 10px;
+        font-size: 2em;
+    }
+
+    #left .small
+    {
+        width:80px; height:80px; 
+    }
+
+
+    #right li
+    {
+        list-style-type:none;
+    }
+
+    #left{
+        /* border: solid 1px red; */
+        width: 260px;
+        float: left;
+    }
+
+    #right {
+        float: left;
+        margin-left: 20px;
+    }
+
+    #right {
+        line-height: 2em;
+    }
+
+    #right>button {
+        padding: 10px 100px;
+        margin: 10px;
+    }
+
+    </style>
+
+</head>
+
+<body>
+    
+<h2>에디오피아 게뎁</h2>
+
+
+<div id="left">
+    <img src="coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="250" height="200">
+
+
+    <div>
+    <img src="coffee-pink.jpg" class="small">
+    <img src="coffee-blue.jpg" class="small">
+    <img src="coffee-gray.jpg" class="small">
+    </div>
+</div>
+
+<div id="right">
+    <ul>
+        <li>상품명 : 에디오피아 게뎁</li>
+        <li>판매가 : 9,000원</li>
+        <li>배송비 : 3,000원(50,000원 이상 구매시 무료)</li>
+        <li>적립금 : 180원(2%)</li>
+        <li>로스팅 : 2019.06.17</li>
+    </ul>
+
+    <button>장바구니 담기</button>
+
+    <p>상세 설명 보기</p>
+
+</div>
+
+<script>
+
+var bigPic = document.querySelector("#cup");
+var smallPics = document.querySelectorAll(".small");
+
+for(var i=0; i<smallPics.length; i++)
+{
+    smallPics[i].onclick = showBig;
+}
+
+function showBig()
+{
+    var newPic = this.src;
+    bigPic.setAttribute("src",newPic);
+}
+
+</script>
+
+</body>
+</html>

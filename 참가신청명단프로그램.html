@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM - Create & Add Node</title>
+	<link rel="stylesheet">
+
+	<style>
+
+	#container {
+		width:600px;
+		margin:20px auto;
+       
+	}
+	h1 {
+		font-size:2.5em;
+		text-align: center
+	}
+	form {
+		margin-top:50px;			
+	}
+	input[type="text"] {
+		float:left;
+		width:300px;
+		padding:12px;
+		border:none;
+		border-bottom:1px solid #ccc;
+		font-size:20px;
+	}
+	input:focus {
+		outline: none;
+	}
+	button {
+		width:100px;
+		border:1px solid #ccc;
+		border-radius:7px;
+		padding:12px;	
+		margin-left:30px;
+		font-size:20px;
+        float:left;
+
+	}
+
+    /*#rButton
+    {
+        margin:0 0 -150px 0px;
+        position:relative;
+    }*/
+
+	button:hover {
+		background-color:#ccc;
+	}
+	hr {
+		clear:both;
+		visibility: hidden;
+	}
+	#nameList > p {
+		font-size:20px;
+		text-indent:50px;
+		line-height: 1.5;
+	}
+	.del {
+		font-size:20px;
+		text-align: center;
+		color:#ccc;
+		background:transparent;
+		float:right;
+		margin-right:10px;
+	}
+	.del:hover {
+		color:#222;
+		cursor: pointer;
+	}
+	.del:active {
+		outline:0;
+	}
+</style>
+
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+		<h1>참가 신청</h1>
+		<form action="">
+			<input type="text" id="userName" placeholder="이름" required>
+			<button onclick = "newRegister(); return false;">신청</button>
+            <button id="rButton" onclick = "r()";>초기화</button>
+		</form>
+		<hr>
+		<div id="nameList"></div>
+	</div>
+
+    <script>
+
+        var userName = document.querySelector("#userName");
+        
+        function newRegister()
+        {
+            if(userName.value == "")
+            {
+                alert("입력한 값이 없습니다.");
+                return;
+            }
+        
+            var newP = document.createElement("p");
+            var newText = document.createTextNode(userName.value);
+            newP.appendChild(newText);
+
+			var delBttn = document.createElement("span");
+			var delText = document.createTextNode("X");
+			delBttn.setAttribute("class","del");
+			delBttn.appendChild(delText);
+			newP.appendChild(delBttn);
+
+            var nameList = document.querySelector("#nameList");
+			nameList.insertBefore(newP,nameList.childNodes[0]);
+            //nameList.appendChild(newP);
+            userName.value = "";
+
+			var removeBttns = document.querySelectorAll(".del");
+
+			
+
+        }
+        
+        function r()
+        {
+			document.querySelector("#nameList").innerHTML="";
+		}
+
+	</script>
+
+</body>
+</html>

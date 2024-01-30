@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+
+    *
+    {
+        margin:0;
+        padding:0;
+    }
+
+    #parent
+    {
+        margin: 30px;
+        position: relative;
+    }
+
+    #btn
+    {
+        position:absolute;
+        top:170px;
+        left:5px;
+        opacity: 50%; /*투명도*/
+    }
+
+    #desc
+    {
+        margin:30px;
+        width:300px;
+        text-align: justify; /*양쪽정렬*/
+        display: none;
+    }
+
+    #desc>div 
+    {
+        line-height: 25px;
+    }
+
+    </style>
+
+    <script>
+
+    function showDetail()
+    {
+        document.querySelector('#desc').style.display = "block";
+        document.querySelector('#open').style.display = "none";
+    }
+
+    function hideDetail()
+    {
+        document.querySelector('#desc').style.display = "none";
+        document.querySelector('#open').style.display = "block";
+    }
+
+    
+
+    // coverImage.onmouseover = function()
+    // {
+    //     coverImage.style.border = "5px black solid";
+    // }
+
+    
+ 
+    
+
+    
+
+    </script>
+
+</head>
+<body>
+
+<div id="parent">
+    <img src="img/flowerflower.jpg" id="cover">
+    <div id="btn">
+        <input type="button" id="open" value ="상세 설명 보기" onclick="showDetail()">
+    </div>       
+</div>
+<script>
+    var coverImage = document.querySelector("#cover");
+    coverImage.onmouseover = function()
+    {
+        coverImage.style.border = "5px solid black"; 
+    };
+    coverImage.onmouseout = function()
+    {
+        coverImage.style.border = ""; 
+    };
+</script>
+<div id="desc">
+    <h2>민들레</h2>
+    <div>코스모스의 높이는 약 1.5m에서 2m이다. 줄기는 곧게 서며 털 없이 가지가 많이 갈라진다. 잎은 마주나고 2회 깃꼴겹잎이며 갈라진 조각은 선 또는 바소 모양이다. 꽃은 줄기와 가지 끝에 한 개씩 달린다. 두화의 지름은 약 6cm이며 설상화는 6에서 8개이고 색상은 품종에 따라 흰색, 분홍색, 보라색으로 다양하다. 열매는 수과로 털이 없다.
+    한방에서는 코스모스를 약재로 쓰기도 한다. 뿌리를 제외한 식물체 전체를 추영(秋英)이라는 약재로 사용한다. 주로 눈이 충혈되고 아픈 증세와 종기에 사용한다.  </div>
+
+    <input type="button" value="상세설명닫기" onclick ="hideDetail()">
+</div>
+
+
+
+</body>
+</html>
