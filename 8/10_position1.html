@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>position1.html</title>
+	<style>
+	
+	*
+	{
+		margin:0;
+		padding:0;
+	}
+
+	#parent
+	{
+		width:500px;
+		height:300px;
+		border:solid 5px #000000;
+		margin:50px 0 0 50px;
+		position: absolute;	
+	}
+
+	#box2
+	{
+		position: absolute;
+		top:0px;
+		right:0px;
+	}
+
+	#box3
+	{
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+	}
+
+	#box4
+	{
+		position: absolute;
+		bottom:0px;
+		right:0px;
+	}
+
+	#box5
+	{
+		position:absolute;
+		top:110px;
+		left:210px;
+	}
+
+	
+	#box1, #box2, #box3, #box4, #box5
+	{
+		width:80px;
+		height:80px;
+		text-align: center;
+		line-height: 80px;
+	}
+
+	#box1{background-color:#ff0000;}
+	#box2{background-color:#00ff00;}
+	#box3{background-color:#ffff00;}
+	#box4{background-color:blue;}
+	#box5{background-color:pink;}
+
+	</style>
+</head>
+
+<body>
+
+<div id="parent">
+	<div id="box1">A</div>
+	<div id="box2">B</div>
+	<div id="box3">C</div>
+	<div id="box4">D</div>
+	<div id="box5">E</div>
+</div>
+
+</body>
+</html>
